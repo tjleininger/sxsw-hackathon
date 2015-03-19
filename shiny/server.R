@@ -3,21 +3,35 @@ palette(c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3",
 
 shinyServer(function(input, output, session) {
   
-  # Combine the selected variables into a new data frame
-  selectedData <- reactive({
-    iris[, c(input$xcol, input$ycol)]
+  # Get My Results action button
+  output$value <- renderPrint({ input$action })
+  
+  # will get this data
+  colNames <- c('Index','Speed','Artist','Song Title','Tempo','Popularity')
+  masterPlaylist <- read.table('Example.txt',sep='\t',skip=1,header=F,quote="",col.names=colNames)
+  for(spd in c('slow','moderate','fast')){
+    ind <- which(masterPlaylist$Speed==spd)
+    masterPlaylist$Order[ind] <- 1:length(ind)
+  }
+  
+  inputDifficulty <- reactive({
+    input$difficulty
   })
   
-  clusters <- reactive({
-    kmeans(selectedData(), input$clusters)
-  })
+  # Playlist Display - http://shiny.rstudio.com/gallery/datatables-options.html
+  myOptions <- list(paging = FALSE, searching=FALSE)
+  output$playlist <- renderDataTable({
+    masterPlaylist[masterPlaylist$Speed==inputDifficulty(),c(7,3,4,6)]
+    },
+    options = myOptions)   
   
-  output$plot1 <- renderPlot({
-    par(mar = c(5.1, 4.1, 0, 1))
-    plot(selectedData(),
-         col = clusters()$cluster,
-         pch = 20, cex = 3)
-    points(clusters()$centers, pch = 4, cex = 4, lwd = 4)
-  })
-  
+  # Pace plot
+  tempo <- cumsum(rgamma(100,1,1))
+  output$pacePlot <- renderPlot({
+    par(mfrow=c(1,2))
+    plot(tempo,type='l',xlab='Minutes',ylab='Pace', main='Your Pace')
+    ind <- masterPlaylist$Speed==inputDifficulty()
+    tempos <- masterPlaylist$Tempo[ind]
+    barplot(tempos,xlab='??',ylab='Pace', main='Selected Playlist',col='blue', names.arg=1:length(tempos))
+  }, height=300,width=600)
 })

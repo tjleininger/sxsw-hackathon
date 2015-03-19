@@ -1,0 +1,26 @@
+	Playlist	artist_name	title	primary_tempo	popularity
+3	fast	Beyonce	Run the World (Girls)	126.05	0.65
+5	fast	Nicki Minaj	Pound the Alarm	124.529	0.66
+6	fast	Miley Cyrus	When I Look at You	137.812	0.67
+7	fast	Jennifer Lopez	On the Floor	132.51	0.71
+8	fast	Rihanna	Only Girl (In the World)	126.05	0.72
+9	fast	Rihanna	Where Have You Been	128.4	0.73
+10	fast	Demi Lovato	Neon Lights	126.048	0.75
+12	fast	Iggy Azalea	Work	139.675	0.8
+14	moderate	Miley Cyrus	Party in the U.S.A	95.703	0.65
+16	moderate	Ariana Grande	Popular Song	99.384	0.66
+17	moderate	Beyonce	If I Were a Boy	90.0	0.67
+18	moderate	Mariah Carey	Fantasy	102.273	0.68
+19	moderate	Destiny's Child	Survivor	80.36	0.7
+20	moderate	Selena Gomez	Come & Get It	80.124	0.72
+21	moderate	Rihanna	Diamonds	92.285	0.79
+23	moderate	Justin Timberlake	Mirrors	77.13	0.82
+24	slow	Destiny's Child	Temptation	72.12	0.45
+25	slow	Beyonce	Amor Gitano	56.25	0.47
+27	slow	Demi Lovato	Warrior	60.62	0.65
+28	slow	Kacey Musgraves	Keep It to Yourself	73.828	0.66
+29	slow	Ciara	Like a Boy	66.18	0.67
+30	slow	Jessie J	Who You Are	68.0	0.67
+31	slow	Rihanna	Unfaithful	72.279	0.67
+32	slow	Britney Spears	Till the World Ends	65.834	0.7
+34	slow	Justin Timberlake	My Love	59.84	0.72
