@@ -1,2 +1,2 @@
-	Playlist	artist_name	title	primary_tempo	popularity
+Order	Artist	Song_title	Tempo
 

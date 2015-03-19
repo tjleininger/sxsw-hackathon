@@ -1,3 +1,5 @@
+rm(list=ls());gc()
+
 require(rCharts)
 require(shiny)
 require(data.table)
